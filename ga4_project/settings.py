@@ -37,6 +37,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_cron',
 ]
 
 THIRD_PARTY_APPS = [
@@ -131,3 +132,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+GOOGLE_APPLICATION_CREDENTIALS = "ga4apipython-453205-06f7f77cd7c9.json"
+PROPERTY_ID = "481463882"
+
+
+# CRONJOBS = [
+#     # (Schedule, Command, Description)
+#     ('0 0 * * *', 'myapp.cron.my_scheduled_job', 'Run every midnight'),
+# ]
+
+CRONJOBS = [
+    # (Schedule, Command, Description)
+    ('* * * * *', 'myapp.cron.my_scheduled_job', 'Run every minute'),
+]
